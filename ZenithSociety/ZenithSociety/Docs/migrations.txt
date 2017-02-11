@@ -1,0 +1,16 @@
+﻿==============================  ApplicationDbContext =============================
+
+enable-migrations -ContextProjectName ZenithDataLib -StartUpProjectName ZenithDataLib -ContextTypeName ZenithDataLib.Models.ApplicationDbContext -MigrationsDirectory Migrations\Identity
+
+add-migration -ConfigurationTypeName ZenithSociety.Migrations.Identity.Configuration "FirstMigration"
+
+update-database -ConfigurationTypeName ZenithSociety.Migrations.Identity.Configuration
+
+
+
+==============================  Activity/Event =============================
+enable-migrations -ContextProjectName ZenithDataLib -StartUpProjectName ZenithDataLib -ContextTypeName ZenithDataLib.Models.ApplicationDbContext -MigrationsDirectory Migrations\Company
+
+add-migration -ConfigurationTypeName ZenithSociety.Migrations.Company.Configuration "FirstMigration"
+
+update-database -ConfigurationTypeName ZenithSociety.Migrations.Company.Configuration

@@ -1,0 +1,115 @@
+﻿
+@model ZenithSociety.Models.HomeViewModel
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to ZenithSociety</h1>
+    <p class="lead" style="color:antiquewhite">The Zenith Society is a family oriented non-for-profit organization that holds events during 
+    the week.</p>
+</div>
+
+<table class="table table-hover" border="1">
+    @if (Model.Mon.Count != 0)
+    {
+        <tr>
+            <th class="text-center label-info" colspan="2">@Model.Mon.First().EventFrom.ToString("dddd MMMM dd, yyyy")</th>
+        </tr>
+        foreach (var item in Model.Mon)
+        {
+            <tr>
+                <td>@String.Format("{0:t}", item.EventFrom) - @String.Format("{0:t}", item.EventTo)</td>
+                <td>@item.Activity.Description</td>
+            </tr>
+        }
+    }
+
+    @if (Model.Tue.Count != 0)
+    {
+        <tr>
+            <th class="text-center label-info" colspan="2">@Model.Tue.First().EventFrom.ToString("dddd MMMM dd, yyyy")</th>
+        </tr>
+        foreach (var item in Model.Tue)
+        {
+            <tr>
+                <td>@String.Format("{0:t}", item.EventFrom) - @String.Format("{0:t}", item.EventTo)</td>
+                <td>@item.Activity.Description</td>
+            </tr>
+        }
+    }
+
+    @if (Model.Wed.Count != 0)
+    {
+        <tr>
+            <th class="text-center label-info" colspan="2">@Model.Wed.First().EventFrom.ToString("dddd MMMM dd, yyyy")</th>
+        </tr>
+        foreach (var item in Model.Wed)
+        {
+            <tr>
+                <td>@String.Format("{0:t}", item.EventFrom) - @String.Format("{0:t}", item.EventTo)</td>
+                <td>@item.Activity.Description</td>
+            </tr>
+        }
+    }
+
+    @if (Model.Thu.Count != 0)
+    {
+        <tr>
+            <th class="text-center label-info" colspan="2">@Model.Thu.First().EventFrom.ToString("dddd MMMM dd, yyyy")</th>
+        </tr>
+        foreach (var item in Model.Thu)
+        {
+            <tr>
+                <td>@String.Format("{0:t}", item.EventFrom) - @String.Format("{0:t}", item.EventTo)</td>
+                <td>@item.Activity.Description</td>
+            </tr>
+        }
+    }
+
+    @if (Model.Fri.Count != 0)
+    {
+        <tr>
+            <th class="text-center label-info" colspan="2">@Model.Fri.First().EventFrom.ToString("dddd MMMM dd, yyyy")</th>
+        </tr>
+        foreach (var item in Model.Fri)
+        {
+            <tr>
+                <td>@String.Format("{0:t}", item.EventFrom) - @String.Format("{0:t}", item.EventTo)</td>
+                <td>@item.Activity.Description</td>
+            </tr>
+        }
+    }
+
+    @if (Model.Sat.Count != 0)
+    {
+        <tr>
+            <th class="text-center label-info" colspan="2">@Model.Sat.First().EventFrom.ToString("dddd MMMM dd, yyyy")</th>
+        </tr>
+        foreach (var item in Model.Sat)
+        {
+            <tr>
+                <td>@String.Format("{0:t}", item.EventFrom) - @String.Format("{0:t}", item.EventTo)</td>
+                <td>@item.Activity.Description</td>
+            </tr>
+        }
+    }
+
+    @if (Model.Sun.Count != 0)
+    {
+        <tr>
+            <th class="text-center label-info" colspan="2">@Model.Sun.First().EventFrom.ToString("dddd MMMM dd, yyyy")</th>
+        </tr>
+        foreach (var item in Model.Sun)
+        {
+            <tr>
+                <td>@String.Format("{0:t}", item.EventFrom) - @String.Format("{0:t}", item.EventTo)</td>
+                <td>@item.Activity.Description</td>
+            </tr>
+        }
+    }
+
+   
+
+</table>

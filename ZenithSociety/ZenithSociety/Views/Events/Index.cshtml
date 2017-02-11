@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ZenithDataLib.Models.Event>
+
+@{
+    ViewBag.Title = "Events Management";
+}
+
+<h2>Events Management</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Activity.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activity.Description)
+        </td>
+        <td>
+            @String.Format("{0:g}", item.EventFrom)
+        </td>
+        <td>
+            @String.Format("{0:g}", item.EventTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
+        </td>
+    </tr>
+}
+
+</table>
